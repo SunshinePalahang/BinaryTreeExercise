@@ -1,3 +1,12 @@
+class BinarySearchTreeNode:
+    def __init__(self, data):
+         self.data = data
+         self.left = None
+         self.right = None
+
+         
+
+
 # find min element in the tree 
 # find max element in the tree 
 # find the sum of all elements 
