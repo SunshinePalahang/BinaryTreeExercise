@@ -56,7 +56,7 @@ class BinarySearchTreeNode:
     #     if self.right is None:
     #         return self.data
     #     return self.right.find_max() 
-    # # find the sum of all elements 
+    # find sum of all elements
     # def find_sum(self):
     #     left = self.left.find_sum() if self.left else 0
     #     right = self.right.find_sum() if self.right else 0
@@ -93,9 +93,9 @@ if __name__=='__main__':
     letters = ['S', 'U', 'N', 'S', 'H', 'I', 'N', 'E', 'R', 'I', 'C', 'H', 'M', 'E', 'R', 'P', 'A', 'L', 'A', 'H', 'A', 'N', 'G']
     letters_tree = build_tree(letters)
 
-    # print("Minimum Number is: ", letters_tree.find_min())
-    # print("Maximum Number is: ", letters_tree.find_max())
-    # print("Sum is: ", letters_tree.find_sum())
+    print("Minimum Letter is: ", min(letters))
+    print("Maximum Letter is: ", max(letters))
+    # print("Sum is: ", numbers_tree.find_sum())
     print("In Order Traversal: ", letters_tree.in_order_traversal())
     print("Post Order Traversal: ", letters_tree.post_order_traversal())
     print("Pre Order Traversal: ", letters_tree.pre_order_traversal())
