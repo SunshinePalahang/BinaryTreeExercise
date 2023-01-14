@@ -44,7 +44,10 @@ class BinarySearchTreeNode:
         if self.right:
             elements += self.right.in_order_traversal()
 
-        return elements   
+        return elements
+
+    if __name__=='__main__':
+        numbers = [15, 4, 20, 19, 31, 30]
 
 
 # find min element in the tree 
