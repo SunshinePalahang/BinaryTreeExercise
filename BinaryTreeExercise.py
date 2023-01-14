@@ -51,6 +51,34 @@ class BinarySearchTreeNode:
         if self.left is None:
             return self.data
         return self.left.find_min()
+    # find max element in the tree
+    def find_max(self):
+        if self.right is None:
+            return self.data
+        return self.right.find_max() 
+    # find the sum of all elements 
+    def find_sum(self):
+        left = self.left.find_sum() if self.left else 0
+        right = self.right.find_sum() if self.right else 0
+        return self.data + left + right
+    # perform in post order traversal
+    def post_order_traversal(self):
+        elements = []
+        if self.left:
+            elements += self.left.post_order_traversal()
+        if self.right:
+            elements += self.right.post_order_traversal()
+
+        elements.append(self.data)
+        return elements
+    # perform in pre order traversal
+    def pre_order_traversal(self):
+        elements = [self.data]
+        if self.left:
+            elements += self.left.pre_order_traversal()
+        if self.right:
+            elements += self.right.pre_order_traversal()
+        return elements
 
 def build_tree(elements):
     print("Building tree with these elements:",elements)
@@ -66,9 +94,10 @@ if __name__=='__main__':
     numbers_tree = build_tree(numbers)
 
     print("Minimum Number is: ", numbers_tree.find_min())
+    print("Maximum Number is: ", numbers_tree.find_max())
+    print("Sum is: ", numbers_tree.find_sum())
+    print("In Order Traversal: ", numbers_tree.in_order_traversal())
+    print("Post Order Traversal: ", numbers_tree.post_order_traversal())
+    print("Pre Order Traversal: ", numbers_tree.pre_order_traversal())
 
  
-# find max element in the tree 
-# find the sum of all elements 
-# perform in post order traversal
-# perform in pre order traversal
