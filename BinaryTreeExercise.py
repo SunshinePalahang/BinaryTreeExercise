@@ -1,8 +1,8 @@
 class BinarySearchTreeNode:
     def __init__(self, data):
-         self.data = data
-         self.left = None
-         self.right = None
+        self.data = data
+        self.left = None
+        self.right = None
         
     def add_child(self, data):
         if data == self.data:
@@ -46,20 +46,28 @@ class BinarySearchTreeNode:
 
         return elements
 
-    def build_tree(elements):
-        print("Building tree with these elements: ", elements)
-        root = BinarySearchTreeNode(elements[0])
+    # find min element in the tree 
+    def find_min(self):
+        if self.left is None:
+            return self.data
+        return self.left.find_min()
 
-        for i in range(1, len(elements)):
-            root.add_child(elements[i])
+def build_tree(elements):
+    print("Building tree with these elements:",elements)
+    root = BinarySearchTreeNode(elements[0])
 
-        return root
+    for i in range(1,len(elements)):
+        root.add_child(elements[i])
 
-    if __name__=='__main__':
-        numbers = [15, 4, 20, 19, 31, 30]
+    return root
 
+if __name__=='__main__':
+    numbers = [15, 4, 20, 19, 31, 30]
+    numbers_tree = build_tree(numbers)
 
-# find min element in the tree 
+    print("Minimum Number is: ", numbers_tree.find_min())
+
+ 
 # find max element in the tree 
 # find the sum of all elements 
 # perform in post order traversal
