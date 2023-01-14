@@ -46,21 +46,21 @@ class BinarySearchTreeNode:
 
         return elements
 
-    # find min element in the tree 
-    def find_min(self):
-        if self.left is None:
-            return self.data
-        return self.left.find_min()
-    # find max element in the tree
-    def find_max(self):
-        if self.right is None:
-            return self.data
-        return self.right.find_max() 
-    # find the sum of all elements 
-    def find_sum(self):
-        left = self.left.find_sum() if self.left else 0
-        right = self.right.find_sum() if self.right else 0
-        return self.data + left + right
+    # # find min element in the tree 
+    # def find_min(self):
+    #     if self.left is None:
+    #         return self.data
+    #     return self.left.find_min()
+    # # find max element in the tree
+    # def find_max(self):
+    #     if self.right is None:
+    #         return self.data
+    #     return self.right.find_max() 
+    # # find the sum of all elements 
+    # def find_sum(self):
+    #     left = self.left.find_sum() if self.left else 0
+    #     right = self.right.find_sum() if self.right else 0
+    #     return self.data + left + right
     # perform in post order traversal
     def post_order_traversal(self):
         elements = []
@@ -90,14 +90,14 @@ def build_tree(elements):
     return root
 
 if __name__=='__main__':
-    numbers = [15, 4, 20, 19, 31, 30]
-    numbers_tree = build_tree(numbers)
+    letters = ['S', 'U', 'N', 'S', 'H', 'I', 'N', 'E', 'R', 'I', 'C', 'H', 'M', 'E', 'R', 'P', 'A', 'L', 'A', 'H', 'A', 'N', 'G']
+    letters_tree = build_tree(letters)
 
-    print("Minimum Number is: ", numbers_tree.find_min())
-    print("Maximum Number is: ", numbers_tree.find_max())
-    print("Sum is: ", numbers_tree.find_sum())
-    print("In Order Traversal: ", numbers_tree.in_order_traversal())
-    print("Post Order Traversal: ", numbers_tree.post_order_traversal())
-    print("Pre Order Traversal: ", numbers_tree.pre_order_traversal())
+    # print("Minimum Number is: ", letters_tree.find_min())
+    # print("Maximum Number is: ", letters_tree.find_max())
+    # print("Sum is: ", letters_tree.find_sum())
+    print("In Order Traversal: ", letters_tree.in_order_traversal())
+    print("Post Order Traversal: ", letters_tree.post_order_traversal())
+    print("Pre Order Traversal: ", letters_tree.pre_order_traversal())
 
  
